@@ -5,7 +5,7 @@ import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Process from "./components/Process/Process";
-import Testimonials from "./components/Testimonials";
+import Testimonials from "./components/Testimonials/Testimonials";
 import FAQ from "./components/Resuelve/FAQ";
 import Footer from "./components/Footer/Footer";
 

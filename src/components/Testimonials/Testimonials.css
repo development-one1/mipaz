@@ -1,0 +1,208 @@
+:root {
+  --color-olive-brand: #9ca98c;
+  --color-text-main: #2d3129;
+  --color-text-muted: #666e60;
+  --bg-card: #ffffff;
+  --border-subtle: #f1f0ec;
+  --font-serif-title: 'Playfair Display', Georgia, serif;
+  --font-sans-body: 'Inter', system-ui, sans-serif;
+}
+
+.testimonials-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
+  font-family: var(--font-sans-body);
+  color: var(--color-text-main);
+}
+
+/* Cabecera */
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonials-header .section-subtitle {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--color-olive-brand);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.testimonials-title {
+  font-family: var(--font-serif-title);
+  font-size: 34px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+.testimonials-decor-leaf {
+  display: flex;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+/* Distribución de las Tarjetas (Grid de 3 columnas en desktop) */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Estilo de la Tarjeta */
+.testimonial-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px; /* Bordes suaves */
+  padding: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(140, 146, 134, 0.03); /* Sombra súper ligera */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(140, 146, 134, 0.07);
+}
+
+/* Comillas decorativas */
+.quote-mark {
+  font-family: var(--font-serif-title);
+  font-size: 48px;
+  color: #d1d5db; /* Gris claro suave */
+  line-height: 1;
+  position: absolute;
+  top: 15px;
+  left: 24px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Texto del Testimonio */
+.testimonial-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #3d4238;
+  margin: 12px 0 28px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor del Usuario */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto; /* Empuja el perfil siempre al fondo de la tarjeta */
+}
+
+/* Avatar circular */
+.avatar-container {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #eae8e3;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e8e1;
+  color: var(--color-text-main);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Metadatos */
+.user-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.user-country {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Paginación Inferior (Dots) */
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d1d0cb;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--color-olive-brand);
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   MÓVILES Y UX RESPONSIVO (Media Queries)
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  /* En tablets dividimos en 2 columnas */
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  /* UX PATTERN: Carrusel táctil nativo en lugar de una lista vertical gigante */
+  .testimonial-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 4px 20px 4px;
+    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+  }
+
+  .testimonial-grid::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll en Chrome/Safari */
+  }
+
+  .testimonial-card {
+    flex: 0 0 85%; /* Muestra el 85% de una tarjeta y asoma la siguiente */
+    scroll-snap-align: center;
+    padding: 24px;
+  }
+  
+  .testimonials-title {
+    font-size: 26px;
+  }
+}
