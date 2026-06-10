@@ -1,0 +1,155 @@
+:root {
+  --color-olive-muted: #9ca98c;
+  --color-text-main: #2d3129;
+  --color-text-body: #555c4e;
+  --bg-faq-item: #ffffff;
+  --border-faq: #f1f0ec; /* Color suave para simular la profundidad */
+  --font-serif-title: 'Playfair Display', Georgia, serif;
+  --font-sans-body: 'Inter', system-ui, sans-serif;
+}
+
+.faq-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
+  font-family: var(--font-sans-body);
+  color: var(--color-text-main);
+  position: relative;
+}
+
+/* Cabecera */
+.faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-header .section-subtitle {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--color-olive-muted);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.faq-title {
+  font-family: var(--font-serif-title);
+  font-size: 34px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+.faq-decor-leaf {
+  display: flex;
+  justify-content: center;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+/* Grid del Contenedor (Maneja las 2 columnas en Desktop) */
+.faq-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px; /* Espaciado horizontal y vertical entre tarjetas */
+  align-items: start;
+}
+
+/* Tarjetas individuales de FAQ */
+.faq-item {
+  background-color: var(--bg-faq-item);
+  border: 1px solid var(--border-faq);
+  border-radius: 20px; /* Bordes redondeados elegantes de tu referencia */
+  box-shadow: 0 4px 12px rgba(140, 146, 134, 0.04); /* Sombra súper suave */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: #e2e0d8;
+  box-shadow: 0 6px 16px rgba(140, 146, 134, 0.08);
+}
+
+/* Botón de la pregunta */
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 22px 28px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-main);
+  cursor: pointer;
+  gap: 16px;
+}
+
+/* Icono de la flecha */
+.faq-arrow-icon {
+  color: #7c8275;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.faq-arrow-icon.rotate {
+  transform: rotate(180deg);
+  color: var(--color-olive-muted);
+}
+
+/* Animación del colapso (Caja de respuestas) */
+.faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-wrapper.show {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-content {
+  overflow: hidden;
+}
+
+.faq-answer-content p {
+  margin: 0;
+  padding: 0 28px 24px 28px; /* Padding interno solo cuando se expande */
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text-body);
+}
+
+/* ==========================================================================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tabletas y pantallas medianas */
+@media (max-width: 900px) {
+  .faq-grid-container {
+    grid-template-columns: 1fr; /* Cambia a 1 sola columna */
+    gap: 14px;
+  }
+  
+  .faq-title {
+    font-size: 28px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .faq-section {
+    margin: 40px auto;
+  }
+
+  .faq-question-btn {
+    padding: 18px 20px;
+    font-size: 14px;
+  }
+
+  .faq-answer-content p {
+    padding: 0 20px 18px 20px;
+    font-size: 13.5px;
+  }
+}

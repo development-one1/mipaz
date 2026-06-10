@@ -6,7 +6,7 @@ import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Process from "./components/Process/Process";
 import Testimonials from "./components/Testimonials";
-import FAQ from "./components/FAQ";
+import FAQ from "./components/Resuelve/FAQ";
 import Footer from "./components/Footer/Footer";
 
 export default function App() {
