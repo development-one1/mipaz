@@ -79,7 +79,7 @@ h1, h2, h3, h4, p, span, a {
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: clamp(60px, 8vw, 120px);
 }
 
 /* Hero con un poquito más de aire */
