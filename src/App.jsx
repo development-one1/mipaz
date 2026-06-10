@@ -7,7 +7,6 @@ import About from "./components/About/About";
 import Process from "./components/Process/Process";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
-import CTA from "./components/CTA";
 import Footer from "./components/Footer/Footer";
 
 export default function App() {
@@ -23,7 +22,6 @@ export default function App() {
         <Process />
         <Testimonials />
         <FAQ />
-        <CTA />
       </main>
 
       <Footer />
