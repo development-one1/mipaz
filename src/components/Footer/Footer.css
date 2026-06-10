@@ -1,0 +1,270 @@
+:root {
+  --color-olive: #9ca98c;
+  --color-olive-dark: #6e7a5f;
+  --color-sand-light: #f9f8f4;
+  --color-text-dark: #2d3129;
+  --color-text-muted: #666e60;
+  --font-serif: 'Playfair Display', Georgia, serif; /* Tipografía elegante para el banner */
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+.footer-container {
+  width: 100%;
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   1. BANNER SUPERIOR (VERDE OBRA)
+   ========================================================================== */
+.footer-cta-banner {
+  background-color: var(--color-olive);
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Decoración de las hojas izquierdas */
+.banner-leaves-decor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  /* Reemplaza esta URL por tu archivo final de ilustración de hojas con fondo transparente */
+  background-image: url('assets/hojas-background.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.banner-content {
+  text-align: center;
+  max-width: 700px;
+  z-index: 2;
+}
+
+.banner-subtitle {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.banner-title {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 28px 0;
+}
+
+.mobile-break {
+  display: none;
+}
+
+/* Botones */
+.banner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.banner-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-filled {
+  background-color: var(--color-olive-dark);
+  color: #ffffff;
+  border: 1px solid var(--color-olive-dark);
+}
+
+.btn-filled:hover {
+  background-color: #5c674f;
+  transform: translateY(-1px);
+}
+
+.btn-outlined {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-text-dark);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outlined:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   2. SECCIÓN MEDIA (LOGO Y DATOS)
+   ========================================================================== */
+.footer-middle {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  border-bottom: 1px solid #eaeae8;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.brand-logo-icon {
+  color: var(--color-olive-dark);
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.brand-tagline {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  margin: 2px 0 0 0;
+}
+
+.footer-info {
+  flex: 1.5;
+  min-width: 280px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.footer-socials {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--color-olive-dark);
+}
+
+/* ==========================================================================
+   3. SECCIÓN INFERIOR (LEGAL)
+   ========================================================================== */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: #8c9286;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal-links a {
+  color: #8c9286;
+  text-decoration: none;
+}
+
+.footer-legal-links a:hover {
+  color: var(--color-text-dark);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .footer-middle {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    justify-content: center;
+  }
+  
+  .footer-socials {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-leaves-decor {
+    width: 120px; /* Se reduce en móvil para no estorbar el texto */
+    opacity: 0.4;
+  }
+  
+  .banner-title {
+    font-size: 26px;
+  }
+  
+  .mobile-break {
+    display: block;
+  }
+  
+  .banner-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-legal-links {
+    justify-content: center;
+  }
+}
