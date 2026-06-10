@@ -28,7 +28,7 @@ export default function Hero() {
           </div>
 
           <p className="hero-subtext">
-            🌐 Sesiones online para hispanohablantes en Europa y el mundo.
+            🌐 Sesiones online en Europa y el mundo.
           </p>
         </div>
 
