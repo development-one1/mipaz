@@ -20,7 +20,7 @@ export default function Process() {
             <div className="step-icon">🔒</div>
             <h3>Primera Sesión</h3>
             <p>Evaluación y definición de objetivos del tratamiento.</p>
-            <div className="red-scratch"></div> {/* El tachón rojo de la imagen */}
+            
           </div>
 
           <div className="step-item">

@@ -4,7 +4,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer-container">
+    <footer className="footer-container" id="contacto">
       {/* 1. SECCIÓN SUPERIOR: CTA VERDE */}
       <div className="footer-cta-banner">
         {/* Aquí puedes meter la imagen de las hojas usando un tag img o por CSS background */}

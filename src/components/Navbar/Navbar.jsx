@@ -26,7 +26,7 @@ export default function Navbar() {
             <a href="#" onClick={() => setIsOpen(false)}>Inicio</a>
             <a href="#" onClick={() => setIsOpen(false)}>Sobre mí</a>
             <a href="#" onClick={() => setIsOpen(false)}>Servicios</a>
-            <a href="#" onClick={() => setIsOpen(false)}>Contacto</a>
+            <a href="#contacto" onClick={() => setIsOpen(false)}>Contacto</a>
           </div>
 
           <div className="nav-mobile-extra">
