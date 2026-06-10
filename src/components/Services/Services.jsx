@@ -4,7 +4,6 @@ export default function Services() {
   const items = [
     { title: "Ansiedad y estrés", desc: "Aprende a gestionar la ansiedad y la preocupación constante." },
     { title: "Autoestima y confianza", desc: "Fortalece tu amor propio, seguridad y confianza en ti mismo." },
-    { title: "Relaciones de pareja", desc: "Mejora la comunicación y construye relaciones más sanas.", highlighted: true },
     { title: "Migración y adaptación", desc: "Acompañamiento en procesos de cambio, duelo y adaptación." },
     { title: "Gestión emocional", desc: "Reconoce, comprende y regula tus emociones de forma saludable." },
     { title: "Crecimiento personal", desc: "Terapia para tu desarrollo personal y propósito de vida." }
