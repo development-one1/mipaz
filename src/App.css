@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  /* min-height evita que el fondo se corte si tu contenido de React es largo hacia abajo */
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* FONDO DEFINITIVO RESPONSIVE */
+body {
+  /* Buscamos el equilibrio: que empiece arriba y se adapte al ancho disponible */
+  background-image: url("./assets/imagen.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  
+  /* En Desktop: se estira al 100% del ancho y calcula el alto automáticamente */
+  background-size: 100% auto; 
+  background-color: #F9F7F2; 
+  background-attachment: scroll; /* Permite que el fondo fluya de forma natural */
+}
+
+/* 📱 Ajuste Responsive Real para Celulares y Tablets */
+@media (max-width: 768px) {
+  body {
+    background-image: none;
+    background-color: #F9F7F2;
+  }
+}
+
+/* OVERLAY SEGURO */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: none; /* Corregido tu typo 'nonen' */
+  pointer-events: none;
+}
+
+/* ROOT SIEMPRE ENCIMA */
+#root {
+  position: relative;
+  width: 100%;
+}
+
+/* APP CONTENEDOR RESPONSIVE */
+.app {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  
+  /* Pone márgenes de resguardo a los lados en pantallas chicas */
+  padding: 0 16px; 
+}
+
+/* En pantallas grandes centramos el layout para que coincida con tu imagen */
+@media (min-width: 1200px) {
+  .app {
+    max-width: 1200px;
+    padding: 0;
+  }
+}
+
+/* TEXTO POR DEFECTO ACCESIBLE */
+h1, h2, h3, h4, p, span, a {
+  color: #111;
+  max-width: 100%;
+  overflow-wrap: break-word; /* Evita que las palabras largas rompan el contenedor móvil */
+}
+
+/* ==========================================
+   ESPACIADO GLOBAL ENTRE SECCIONES
+========================================== */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Hero con un poquito más de aire */
+.hero-section {
+  padding-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    gap: 40px;
+  }
+
+  .hero-section {
+    padding-bottom: 16px;
+  }
+}

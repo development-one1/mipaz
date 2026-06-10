@@ -1,0 +1,16 @@
+{
+  "navbar": [
+    "Inicio",
+    "Sobre mí",
+    "Cómo funciona",
+    "Testimonios",
+    "FAQ",
+    "Contacto"
+  ],
+
+  "hero": {
+    "title": "Tu bienestar emocional merece",
+    "highlight": "un espacio seguro",
+    "description": "Acompañamiento psicológico online para ayudarte a gestionar lo que sientes, entenderte y vivir con más calma, claridad y bienestar."
+  }
+}

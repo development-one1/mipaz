@@ -1,0 +1,206 @@
+/* --- SECCIÓN HERO --- */
+.hero-section {
+  padding: 10px 0 40px;
+  width: 100%;
+  background: transparent;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column; /* En móvil: imagen arriba, texto abajo */
+  gap: 32px;
+  width: 100%;
+  padding: 0 24px; 
+  padding-top: 180px;
+  margin: 0 auto;
+}
+
+
+/* --- CONTENIDO DE TEXTO (MÓVIL POR DEFECTO) --- */
+.hero-content {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%; 
+}
+
+.hero-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.8rem, 6vw, 2.5rem); 
+  line-height: 1.3;
+  margin-bottom: 16px;
+  font-weight: 400;
+  color: #2c3e35; /* Un tono oscuro relajante o tu var(--color-dark) */
+}
+
+.text-olive {
+  color: #606c38; /* Color verde oliva para resaltar */
+  font-style: italic;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0 auto 32px;
+  max-width: 440px; 
+}
+
+/* --- BOTONES ESTILIZADOS --- */
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Estilo base del botón */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px; /* Botón completamente redondeado y moderno */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px; 
+}
+
+/* Variante Outline (Línea verde oliva, fondo transparente/blanco) */
+.btn-outline {
+  border: 2px solid #606c38;
+  background-color: transparent;
+  color: #606c38;
+}
+
+.btn-outline:hover {
+  background-color: #606c38;
+  color: #ffffff;
+}
+
+.hero-subtext {
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.4;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* --- 🖥️ AJUSTES PARA DESKTOP (A partir de 992px) --- */
+@media (min-width: 992px) {
+  .hero-section {
+    padding: 80px 0;
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr; /* Dos columnas perfectas */
+    grid-template-areas: "text image"; /* Controlamos el orden visual */
+    gap: 60px;
+    max-width: 1100px;
+    align-items: center;
+  }
+
+
+  .hero-content {
+    grid-area: text; /* El texto va a la izquierda */
+    text-align: left;
+    margin: 0;
+  }
+
+  .hero-image-container {
+    grid-area: image; /* La imagen va a la derecha */
+    max-height: 500px; /* Más alta para pantallas grandes */
+  }
+
+  .hero-description {
+    margin-left: 0;
+    max-width: 480px; 
+  }
+
+  .hero-actions {
+    flex-direction: row; 
+    justify-content: flex-start;
+  }
+
+  .hero-actions .btn {
+    width: auto; 
+    max-width: none;
+  }
+}
+
+// 📱 movil//
+@media (max-width: 768px) {
+  .hero-section {
+  padding: 40px 0;
+}
+
+.hero-container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* CARD VISUAL */
+.hero-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  height: 640px;
+}
+
+/* IMAGEN */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXTO ENCIMA DE LA FOTO */
+.hero-content {
+  position: absolute;
+  bottom: 40px;
+  left: 24px;
+  right: 24px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+  padding: 28px 20px;
+}
+
+/* TITULO */
+.hero-title {
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #2f3d33;
+}
+
+/* DESCRIPCIÓN */
+.hero-description {
+  margin-top: 14px;
+  color: #5d6660;
+  line-height: 1.6;
+}
+
+/* BOTÓN */
+.hero-actions {
+  margin-top: 24px;
+}
+
+.btn {
+  width: 100%;
+  max-width: none;
+}
+
+/* SUBTEXTO */
+.hero-subtext {
+  margin-top: 18px;
+}
+}

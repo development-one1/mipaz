@@ -1,0 +1,211 @@
+.navbar-header {
+  background: transparent;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  padding-top: env(safe-area-inset-top);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  padding: 24px 48px;
+}
+
+.navbar-logo {
+  min-width: fit-content;
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-logo span {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: var(--color-muted);
+}
+
+/* --- BOTÓN HAMBURGUESA (Móvil) --- */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-dark);
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* --- ESTILOS EN MÓVIL (Por defecto) --- */
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 10px);
+
+  left: 20px;
+  right: 20px;
+  width: auto;
+
+  background-color: rgba(249, 247, 242, 0.95);
+  backdrop-filter: blur(20px);
+
+  border-radius: 20px;
+  padding: 24px;
+  gap: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+/* Clase activa desde React */
+.navbar-links.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Contenedor de links internos */
+.nav-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--color-olive);
+  padding-left: 5px;
+}
+
+/* --- CONTENIDO EXTRA (Solo Móvil) --- */
+.nav-mobile-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.nav-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.extra-text {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.nav-mobile-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-mobile-socials a {
+  font-size: 0.9rem;
+  color: var(--color-olive);
+  text-decoration: underline;
+  border: none !important; /* Forza quitar bordes de móvil */
+  padding: 0 !important;
+}
+
+
+/* El botón de escritorio se esconde en móvil */
+.desktop-only-btn {
+  display: none;
+}
+
+
+/* --- 🖥️ ESTILOS EN DESKTOP (¡Mírame ahora!) --- */
+@media (min-width: 992px) {
+  .menu-toggle {
+    display: none; /* Desaparece la hamburguesa */
+  }
+
+  .desktop-only-btn {
+    display: block; /* Reaparece el botón limpio a la derecha */
+  }
+
+  .navbar-links {
+    /* Reseteo maestro del contenedor para que actúe de puente horizontal */
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    gap: 0;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav-menu-items {
+    flex-direction: row; /* Los links se alinean uno al lado del otro */
+    gap: 32px; /* Espaciado premium entre secciones */
+  }
+
+  .navbar-links a {
+    font-size: 0.95rem;
+    padding: 0;
+    border-bottom: none; /* Quitamos las líneas divisorias de móvil */
+  }
+  
+  .navbar-links a:hover {
+    padding-left: 0; /* Quitamos el empuje lateral de móvil */
+    color: var(--color-olive);
+  }
+
+  /* DESAPARECE por completo toda la basura e información extra de móvil */
+  .nav-mobile-extra {
+    display: none !important;
+  }
+}
+
+.navbar-container {
+  max-width: 1100px;
+  padding: 28px 32px;
+}
+/* Tablet */
+
+  @media (max-width: 1024px) {
+  .navbar-container {
+    padding: 22px 28px;
+  }
+}
+
+
+/* Móvil */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 18px 20px;
+  }
+}
